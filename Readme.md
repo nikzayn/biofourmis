@@ -31,6 +31,8 @@ git clone https://github.com/nikzayn/biofourmis.git
 cp sample.env .env
 sudo docker-compose build
 sudo docker-compose up
+close the terminal by ctrl+c or close it forcely
+Then again, enter the command sudo docker-compose up
 ```
 **Note** 
 - When you copy the sample.env to .env file. Please update the email and password fields from the environemnt variables to get started with application.
