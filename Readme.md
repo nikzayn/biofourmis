@@ -3,16 +3,18 @@
 
 ## Overview
 - System Requirements
-- Design Thought
+- Design Thoughts
 - Usage
+- Technologies Required
 - Issues
 - Edge Cases
+- API Usage
 
 ### System Requirements
 - Docker
 - Docker Compose
 
-### Design Thought
+### Design Thoughts
 - First, there shuld be a server where all the cron job scheduler can be easily. For this, I would use docker system in my app.
 - Then, I will first setup my nodejs server, in which I will also setup the database system in which I will store my subscriber's mail id.
 - After, successfull connection and data stored in db. There would be public enpoint from where anyone can easily subscriber with their respective email id's.
@@ -46,3 +48,12 @@ sudo docker-compose up
 ### Edge Cases
 - Used Docker for the code setup
 - Used database for better storage functionality to follow.
+
+### API Usage
+
+| Endpoint                     | Result                                              |
+|------------------------------|-----------------------------------------------------|
+| /subscribers/list            | Submit the email address to subscribe               |
+
+### Postman Usage
+- Here's the image for better understanding of endpoint to trigger: ![postman](https://i.ibb.co/6v6VTJH/biofourmis.png)
