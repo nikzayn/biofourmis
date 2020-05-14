@@ -51,6 +51,8 @@ sudo docker-compose up
 - So, actually I used the **deltaconfirmed** data which show the new covid cases in India. As mentioned in assignment you have the details to show the yesterday data.
 - As I couldn't able to locate the yesterday data.
 - Chances of getting issues with cron jobs.
+- Having issues with the docker **depends_on**. Have to follow the steps carefully.
+
 
 ### Edge Cases
 - Used Docker for the code setup
