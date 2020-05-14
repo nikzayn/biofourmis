@@ -5,7 +5,7 @@ let dbConn;
 const app = express();
 const port = 8080;
 
-const subscribers = require('./routes/subscribers')
+const cronJob = require('./services/cron');
 
 //Database Connection
 function sqlConnection() {
@@ -24,8 +24,7 @@ function sqlConnection() {
 const db = require('./models/db');
 function createTable() {
     for (var i = 0; i < db.length; i++) {
-        dbConn.query(db[i], (err, res) => {
-        });
+        dbConn.query(db[i], (err, res) => {});
     }
 }
 
@@ -36,15 +35,20 @@ function dbSetup() {
 }
 
 
-//Add subscribers to the DB
+// Add subscribers to the DB
+// Get Query from the DB
+// - Inside db query, we will start the cron service
+let subscribersEmailID;
 app.get('/subscribers/list', (req, res) => {
     const email = req.query.email;
-    const query = {
+
+    // Insert Query
+    const query1 = {
         text: 'INSERT INTO subscribers(email) VALUES($1)',
         values: [`${email}`]
     }
 
-    dbConn.query(query, (err) => {
+    dbConn.query(query1, (err) => {
         if (err) {
             console.log(err.stack)
             return
@@ -52,13 +56,26 @@ app.get('/subscribers/list', (req, res) => {
             res.send('Thanks for subscribing!!')
         }
     })
+
+    // Get Query
+    const query2 = 'SELECT email from subscribers'
+
+    dbConn.query(query2, (err, res) => {
+        if (err) {
+            console.log(err.stack)
+        } else {
+            subscribersEmailID = res.rows;  
+        }
+    })
+
 })
 
-app.use('/covid', subscribers)
 
+//Server Setup
 app.listen(port, () => {
     console.log(`Server started on ${port}`);
     dbSetup();
+    cronJob(subscribersEmailID);
 });
 
 
