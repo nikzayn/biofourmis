@@ -28,10 +28,15 @@
 ### Usage
 ```
 git clone https://github.com/nikzayn/biofourmis.git
-cp .env .env
+cp sample.env .env
 sudo docker-compose build
 sudo docker-compose up
 ```
+**Note** 
+- When you copy the sample.env to .env file. Please update the email and password fields from the environemnt variables to get started with application.
+- You can replace the dummy email and password with your email and password
+- To send email using Gmail as a service from third-party apps like our nodejs app, we have to enable 'Allow less secure apps' in Gmail. Login in your Gmail account and navigate to "https://myaccount.google.com/lesssecureapps" and enable the 'Allow less secure apps'.
+
 
 ### Technologies Used
 - Node.js
@@ -57,8 +62,10 @@ sudo docker-compose up
 |------------------------------|-----------------------------------------------------|
 | /subscribers/list            | Submit the email address to subscribe               |
 
+
 ### Postman Usage
 - Here's the image for better understanding of endpoint to trigger: ![postman](https://i.ibb.co/6v6VTJH/biofourmis.png)
 
 ### Demo
 - Here's the image of demo: ![demo](https://i.ibb.co/k3xF4pv/demo.png)
+
