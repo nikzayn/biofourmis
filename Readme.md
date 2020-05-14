@@ -33,7 +33,9 @@ sudo docker-compose build
 sudo docker-compose up
 close the terminal by ctrl+c or close it forcely
 Then again, enter the command sudo docker-compose up
+Then, test the endpoint given in api usage to enter the email in db.
 ```
+
 **Note** 
 - When you copy the sample.env to .env file. Please update the email and password fields from the environemnt variables to get started with application.
 - You can replace the dummy email and password with your email and password in **.env file**
