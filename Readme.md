@@ -34,7 +34,7 @@ sudo docker-compose up
 ```
 **Note** 
 - When you copy the sample.env to .env file. Please update the email and password fields from the environemnt variables to get started with application.
-- You can replace the dummy email and password with your email and password
+- You can replace the dummy email and password with your email and password in **.env file**
 - To send email using Gmail as a service from third-party apps like our nodejs app, we have to enable 'Allow less secure apps' in Gmail. Login in your Gmail account and navigate to "https://myaccount.google.com/lesssecureapps" and enable the 'Allow less secure apps'.
 
 
