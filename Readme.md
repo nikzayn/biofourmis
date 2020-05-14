@@ -9,6 +9,7 @@
 - Issues
 - Edge Cases
 - API Usage
+- Demo
 
 ### System Requirements
 - Docker
@@ -44,6 +45,7 @@ sudo docker-compose up
 ### Issues
 - So, actually I used the **deltaconfirmed** data which show the new covid cases in India. As mentioned in assignment you have the details to show the yesterday data.
 - As I couldn't able to locate the yesterday data.
+- Chances of getting issues with cron jobs.
 
 ### Edge Cases
 - Used Docker for the code setup
@@ -57,3 +59,6 @@ sudo docker-compose up
 
 ### Postman Usage
 - Here's the image for better understanding of endpoint to trigger: ![postman](https://i.ibb.co/6v6VTJH/biofourmis.png)
+
+### Demo
+- Here's the image of demo: ![demo](https://i.ibb.co/k3xF4pv/demo.png)
