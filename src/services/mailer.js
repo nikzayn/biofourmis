@@ -8,7 +8,7 @@ function mailer(data, apiData) {
     }
     else {
         // declare vars,
-        let fromMail = 'nikhilvaidyar1997@gmail.com';
+        let fromMail = `${process.env.email}`;
         let toMail = _.map(data, val => val.email);
         let subject = 'Daily Updates for COVID-19 cases in India';
         let html = `
@@ -54,7 +54,7 @@ function mailer(data, apiData) {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'nikhilvaidyar1997@gmail.com',
+                user: `${process.env.email}`,
                 pass: `${process.env.password}`
             }
         });
