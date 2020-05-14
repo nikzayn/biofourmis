@@ -16,7 +16,7 @@ function getCovidList(emailData) {
                 const result = response.data.statewise
                 statewise(result);
             })
-            .catch(err => res.send(err))
+            .catch(err => console.log(err))
     }
 
     //- Total number of cases overall in country
@@ -36,7 +36,7 @@ function getCovidList(emailData) {
         const apiData = {
             totalCasesOverall,
             newCasesOverall,
-            stateWiseData
+            stateWiseData,
         }
         mailer(emailData, apiData)
     }
