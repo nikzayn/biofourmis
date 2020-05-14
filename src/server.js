@@ -57,17 +57,6 @@ app.get('/subscribers/list', (req, res) => {
         }
     })
 
-    // Get Query
-    const query2 = 'SELECT email from subscribers'
-
-    dbConn.query(query2, (err, res) => {
-        if (err) {
-            console.log(err.stack)
-        } else {
-            subscribersEmailID = res.rows;  
-        }
-    })
-
 })
 
 
@@ -75,7 +64,7 @@ app.get('/subscribers/list', (req, res) => {
 app.listen(port, () => {
     console.log(`Server started on ${port}`);
     dbSetup();
-    cronJob(subscribersEmailID);
+    cronJob(dbConn);
 });
 
 
