@@ -3,9 +3,19 @@ var cron = require('node-cron');
 const getCovidList = require('./subscribers');
 
 
-function cronjob(data) {
+function cronjob(dbConn) {
     cron.schedule('* * * * *', () => {
-        getCovidList(data);
+
+    // Get Query
+    const query2 = 'SELECT email from subscribers'
+
+    dbConn.query(query2, (err, res) => {
+        if (err) {
+            console.log(err.stack)
+        } else {
+            getCovidList(res.rows);
+        }
+    })
     });
 }
 
