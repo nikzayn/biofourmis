@@ -31,6 +31,7 @@ git clone https://github.com/nikzayn/biofourmis.git
 cp sample.env .env
 sudo docker-compose build
 sudo docker-compose up
+Then, after successfull setup trigger the API mentioned below in API usage and pass the specific email address as query params
 ```
 
 **Note** 
