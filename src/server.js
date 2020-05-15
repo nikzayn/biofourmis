@@ -17,7 +17,15 @@ function sqlConnection() {
         port: process.env.DB_PORT,
     });
     dbConn = pool;
-    console.log('DB Connected Successfully')
+    pool.connect((err, client, release) => {
+        if (err) {
+          console.error('Error acquiring client', err.stack);
+          setTimeout(sqlConnection, 1000);
+          return;
+        }
+        console.log('DB Connected Successfully')
+        release();
+      })
 }
 
 //Create Table
