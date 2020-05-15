@@ -31,9 +31,6 @@ git clone https://github.com/nikzayn/biofourmis.git
 cp sample.env .env
 sudo docker-compose build
 sudo docker-compose up
-close the terminal by ctrl+c or close it forcely
-Then again, enter the command sudo docker-compose up
-Then, test the endpoint given in api usage to enter the email in db.
 ```
 
 **Note** 
@@ -55,7 +52,6 @@ Then, test the endpoint given in api usage to enter the email in db.
 - So, actually I used the **deltaconfirmed** data which show the new covid cases in India. As mentioned in assignment you have the details to show the yesterday data.
 - As I couldn't able to locate the yesterday data.
 - Chances of getting issues with cron jobs.
-- Having issues with the docker **depends_on**. Have to follow the steps carefully.
 
 
 ### Edge Cases
