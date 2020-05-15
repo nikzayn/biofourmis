@@ -19,27 +19,27 @@ function sqlConnection() {
     dbConn = pool;
     pool.connect((err, client, release) => {
         if (err) {
-          console.error('Error acquiring client', err.stack);
-          setTimeout(sqlConnection, 1000);
-          return;
+            console.error('Error acquiring client', err.stack);
+            setTimeout(sqlConnection, 1000);
+            return;
         }
         console.log('DB Connected Successfully')
         release();
-      })
+        createTable()
+    })
 }
 
 //Create Table
 const db = require('./models/db');
 function createTable() {
     for (var i = 0; i < db.length; i++) {
-        dbConn.query(db[i], (err, res) => {});
+        dbConn.query(db[i], (err, res) => { });
     }
 }
 
 //DB Setup
 function dbSetup() {
     sqlConnection();
-    createTable()
 }
 
 
