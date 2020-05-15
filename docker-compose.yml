@@ -8,11 +8,12 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - "db"
+      - db
     volumes:
       - ./src:/app/src
     env_file:
       - ./.env
+    restart: always
   db:
     container_name: postgres
     image: postgres:latest
