@@ -4,7 +4,7 @@ const getCovidList = require('./subscribers');
 
 
 function cronjob(dbConn) {
-    cron.schedule('0 6 * * *', () => {
+    cron.schedule('0 */6 * * *', () => {
         console.log('started running')
 
     // Get Query
