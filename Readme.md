@@ -67,8 +67,8 @@ Then, after successfull setup trigger the API mentioned below in API usage and p
 
 
 ### Postman Usage
-- Here's the image for better understanding of endpoint to trigger: ![postman](https://i.ibb.co/6v6VTJH/biofourmis.png)
+- Here's the image for better understanding of endpoint to trigger: ![postman](https://i.ibb.co/2nZh3Wx/Screenshot-2020-09-15-at-1-43-21-PM.png)
 
 ### Demo
-- Here's the image of demo: ![demo](https://i.ibb.co/k3xF4pv/demo.png)
+- Here's the image of demo: ![demo](https://i.ibb.co/zs9jzBw/Screenshot-2020-09-15-at-1-43-48-PM.png)
 
